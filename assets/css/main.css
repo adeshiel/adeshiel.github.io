@@ -167,7 +167,7 @@
 		}
 
 		.item.thumb:hover img {
-			filter: grayscale(100%);
+			filter: grayscale(0%);
    -webkit-transition: all 1.0s ease-in-out;
    -moz-transition: all 1.0s ease-in-out;
    -o-transition: all 1.0s ease-in-out;
