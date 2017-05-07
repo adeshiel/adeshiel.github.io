@@ -159,6 +159,19 @@
 		.item.thumb img {
 			display: block;
 			z-index: 1;
+			filter: grayscale(100%);
+			-webkit-transition: all 1.0s ease-in-out;
+	    -moz-transition: all 1.0s ease-in-out;
+	    -o-transition: all 1.0s ease-in-out;
+
+		}
+
+		.item.thumb:hover img {
+			filter: grayscale(100%);
+   -webkit-transition: all 1.0s ease-in-out;
+   -moz-transition: all 1.0s ease-in-out;
+   -o-transition: all 1.0s ease-in-out;
+
 		}
 
 /* Icons */
