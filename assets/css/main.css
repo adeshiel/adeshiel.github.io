@@ -18,7 +18,7 @@
 		vertical-align: baseline;
 	}
 
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
 
@@ -136,7 +136,7 @@
 /* Item */
 
 	.item.thumb {
-		display: block;
+		display: flex;
 		position: relative;
 		background: #1a1f2c;
 		background: rgba(255, 255, 255, 0.25);
@@ -160,6 +160,7 @@
 			display: block;
 			z-index: 1;
 			filter: grayscale(100%);
+			opacity: 1;
 			-webkit-transition: all 1.0s ease-in-out;
 	    -moz-transition: all 1.0s ease-in-out;
 	    -o-transition: all 1.0s ease-in-out;
@@ -372,6 +373,10 @@
 				background: rgba(18, 21, 29, 0.9);
 				box-shadow: 0px 0px 0px 10px #fff, 0px 10px 60px 10px rgba(8, 11, 19, 0.55);
 				cursor: default;
+				left: 10%;
+				font-size: 11pt;
+				/*text-transform: uppercase; Can do this*/
+				/* text-decoration: underline; Can't do this*/
 			}
 
 				.poptrox-popup .loader {
@@ -389,14 +394,20 @@
 				.poptrox-popup .caption {
 					position: absolute;
 					bottom: 0;
-					left: 0;
+					left: -55%;
+					/* left: 0; */
 					background: #1a1f2c;
 					background: rgba(18, 21, 29, 0.85);
-					display: block;
-					width: 100%;
-					line-height: 75px;
+					/*display: block;*/
+					height: 100%;
+					width: 50%;
+					padding: 2%;
+					border-radius: 5px
+
+				}
+				.poptrox-popup .caption .text {
+					line-height: 20px;
 					text-align: center;
-					font-size: 1.25em;
 					color: #fff;
 				}
 
