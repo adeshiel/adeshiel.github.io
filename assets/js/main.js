@@ -319,7 +319,7 @@ var parallelism = (function($) { var _ = {
 									$itemInner
 										.css('position', 'relative')
 										.css('display', 'block')
-										.css('-webkit-backface-visibility', 'hidden')
+										//.css('-webkit-backface-visibility', 'hidden')
 										.css('width', '100%')
 										.css('height', '100%');
 
@@ -492,7 +492,7 @@ var parallelism = (function($) { var _ = {
 						popupLoaderText: '',
 						selector: '.thumb a.image',
 						usePopupCaption: true,
-						usePopupCloser: false,
+						usePopupCloser: true,
 						usePopupDefaultStyling: false,
 						usePopupNav: true
 					});
@@ -537,6 +537,7 @@ var parallelism = (function($) { var _ = {
 
 				// Poptrox.
 					_.objects.reel.poptrox({
+						//the blur filter behind what you're looking for
 						onPopupClose: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.removeClass('overlayed'); }) : null),
 						onPopupOpen: (_.settings.useBlurFilter ? (function() { _.objects.wrapper.addClass('overlayed'); }) : null),
 						overlayColor: _.settings.popupOverlayColor,
@@ -544,8 +545,8 @@ var parallelism = (function($) { var _ = {
 						popupSpeed: 0,
 						selector: '.thumb a.image',
 						useBodyOverflow: false,
-						usePopupCaption: false,
-						usePopupCloser: false,
+						usePopupCaption: true,
+						usePopupCloser: true,
 						usePopupDefaultStyling: false,
 						usePopupLoader: false,
 						usePopupNav: false,
