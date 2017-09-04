@@ -1,0 +1,78 @@
+* { /* Fresh css palette to overwrite any unexpected browser defaults */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    font-family: 'Arvo', serif;
+    color: #fff;
+}
+
+#navbar {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    background: rgba(230,230,230, 0.9);
+    background: -webkit-linear-gradient(rgba(230,230,340,1),rgba(255,255,255,0.9)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(rgba(230,230,230,1),rgba(255,255,255,0.9)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(rgba(230,230,230,1),rgba(255,255,255,0.9)); /*Fx 3.6-15*/
+    background: linear-gradient(rgba(230,230,230,1),rgba(255,255,255,0.9)); /*Standard*/
+    box-shadow: 0px 5px 5px grey;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding-top: 0.3rem;
+}
+
+.navbar-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 7rem;
+    height: 7rem;
+    padding-left: 0.6rem;
+}
+
+.navbar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.navbar-content a {
+    color: #fff;
+    text-shadow: 0px 0px 8px #000;
+    text-decoration: none;
+
+    display: block;
+    padding: 0 2rem; /* Top and bottom padding doesn't matter because align-items: center */
+}
+.navbar-content a:last-child {
+    padding-right: 3rem;
+}
+
+.navbar-divider {
+    border-left: 1px solid #fff;
+    height: 1.5rem;
+}
+
+.temp-background {
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -100;
+}

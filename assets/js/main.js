@@ -494,7 +494,8 @@ var parallelism = (function($) { var _ = {
 						usePopupCaption: true,
 						usePopupCloser: true,
 						usePopupDefaultStyling: false,
-						usePopupNav: true
+						usePopupNav: true,
+						usePopupEasyClose: false
 					});
 
 				// Trigger resize event.
