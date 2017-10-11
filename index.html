@@ -1,129 +1,127 @@
-<!DOCTYPE HTML>
-<!--
-	Parallelism by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>The Wonderful Website of Ashley Deshields</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
+<head>
+<title>The Wonderful Website of Ashley Deshields</title>
+<link rel="stylesheet" href="assets/main.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
-		<div id="wrapper">
+</head>
+<body>
+  <div class="temp-background">
+  </div>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#about">About Me</a>
+  <a href="#proj">Projects</a>
+  <a href="#">Resume</a>
+  <a href="#">Contact</a>
+</div>
+<div id="main">
+  <div class= "menu-open" onclick="openNav()">&#9776;</div>
 
-			<div id="main">
-				<div id="reel">
+  <div class="start-panel">
+    <img src="https://avatars0.githubusercontent.com/u/20257739?v=3&amp;s=460" style="width:300px;height:300px;border-radius:50%;position:static; align-self:center;">
+    <h1> Hey, nice to see you! </h1>
+  </div>
 
-					<!-- Header Item -->
+  <div class="norm-panel" id="about">
+    <h1>I'm Ashley, nice to meet you!</h1><br>
+    <div style="text-align:left; padding-left: 10px;">
+    <h3> Hi there! To re-introduce myself, my name is Ashley Deshields, and I'm a Sophmore studying Computer Science at Boston University. Here's a lil' fact sheet about me:<br></h3><br>
+    <ul><h4>
+      <li>~ I'm a second degree black belt in Taekwondo and have been practicing since I was in the 2nd grade.</li>
+      <li>~ I enjoy making story driven games in order to combine my passion for programming and digital art (though none have been released YET)!</li>
+      <li>~ I made this site from scratch! Woo!</li>
+      <li>~ I like to snowbaord, roller skate, and skateboard, but I can't ride a bike. </li>
+      <li>~ In highschool, I did track for three years and participated in the Penn Relays once. </li>
 
-						<div id="header" class="item" data-width="400">
-							<div class="inner">
-								<h1>Latest Projects</h1>
-								<p>Newest projects that I've worked on.<br />
-								</p>
-							</div>
-						</div>
+    </ul></h4>
+  </div>
 
-					<!-- Thumb Items -->
-
-						<article class="item thumb" data-width="282">
-							<h2><b>HappyTweet: Tweet Emotion Analysis</b></h2> <br />
-							<!-- the entire article is displayed in the popup; fix it-->
-							<section><p>------In this project, I worked primarly the back end. Using Twilio's emotion analysis API,
-							 my job was to create the functions necessary to calculate the emotions from each of the tweets.
-							 The logo was also my creation, as my team was known as the Jackie Robinson Beanie Babies.
-						 </p></section>
+  </div>
 
 
-							<a href="images/thumbs/JRBB_logo.png" class="image"><img src="images/thumbs/JRBB_logo2.jpg" alt="HackBeanPot"></a>
+  <div class="norm-panel" id="proj">
+    <h1> My Projects! </h1>
+    <div id="projects" style="position:relative;" >
 
-						</article>
+    <div class="project-text" id="p-desc">
+    <p> Select one of my projects on the side to see more details! </p>
+    </div>
+
+    <div class="selection">
+      <ul>
+        <li class="popup" onclick="projectRep('p1')"> B-Essay <span class="popuptext" id="p1">
+          <h2><u> B-Essay </u></h2><br>
+            Have you've ever needed to meet a word count, but never knew what else to write?<br>
+            Ever too tired to try and make it up on your own? <br>
+            Never heard of the "white-space" trick, like me?<br>
+            That's where <i>B-Essay</i> steps in!<br>
+
+            Started in May 2017, <i>B-Essay</i> currently uses Python 2.7 (since Mashape uses 2.7) and Words API to extend your essay for you in many
+            <del> sometimes nonsensensical </del> ways!
+
+        </span> </li>
+
+        <li class="popup" onclick="projectRep('p2')"> HappyTweet <span class="popuptext" id="p2">
+          <h2><u> HappyTweet: Tweet Emotion Analysis </u></h2><br>
+          In this project, I worked primarily the back end.
+          Using Twilio's emotion analysis API, my job was to create the functions necessary to calculate the emotions from each of the tweets.
+          The logo was also my creation, as my team was known as the Jackie Robinson Beanie Babies.
+        </span> </li>
+
+      </ul>
+    </div>
+
+    </div>
+  </div>
+
+</div>
+
 <!--
-						<article class="item thumb" data-width="384">
-							<h2>Ad Infinitum</h2>
-							<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a>
-						</article>
 
-						<article class="item thumb" data-width="274">
-							<h2>Different.</h2>
-							<a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a>
-						</article>
+  <div id="navbar">
+      <a href="https://github.com/adeshiel"><img src="https://avatars0.githubusercontent.com/u/20257739?v=3&amp;s=460" style="width:50px;height:50px;border-radius:50%;" alt="Check out my Github Profile" style="display: flex;
+      flex-direction: row; justify-content: flex-start; align-items: center;width: 7rem;height: 7rem;padding-left: 0.6rem;"></a>
 
-						<article class="item thumb" data-width="282">
-							<h2>Elysium</h2>
-							<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a>
-						</article>
+      <ul class="navbar-content">
+          <li onlick="pageRep('about')"> About Me </li>
+          <div class="navbar-divider"></div>
+          <li onlick="pageRep('projects')"> Projects </li>
+          <div class="navbar-divider"></div>
+          <li onlick="pageRep('contact')"> Contact </li>
+      </ul>
+  </div> <!-- navbar end -->
 
-						<article class="item thumb" data-width="476">
-							<h2>Kingdom of the Wind</h2>
-							<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a>
-						</article>
 
-						<article class="item thumb" data-width="232">
-							<h2>The Pursuit</h2>
-							<a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a>
-						</article>
+  <script>
+  // When the user clicks on div, open the popup
+  function projectRep(x) {
+      var pop_string = new String(x);
+      var replacement = document.getElementById("p-desc");
+      replacement.innerHTML = document.getElementById(pop_string).innerHTML;
+      //  replacement.classList.toggle("show");
+      //}
+  }
+  function pageRep(x) {
+      var pop_string = new String(x);
+      var replacement = document.getElementById("main");
+      replacement.innerHTML = document.getElementById(pop_string).innerHTML;
+    }
 
-						<article class="item thumb" data-width="352">
-							<h2>Boundless</h2>
-							<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a>
-						</article>
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
 
-						<article class="item thumb" data-width="348">
-							<h2>The Spectators</h2>
-							<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a>
-						</article>
-					-->
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
 
-					<!-- Filler Thumb Items (just for demonstration purposes) --> <!--
-						<article class="item thumb" data-width="476"><h2>Kingdom of the Wind</h2><a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="232"><h2>The Pursuit</h2><a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="352"><h2>Boundless</h2><a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="348"><h2>The Spectators</h2><a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="282"><h2>You really got me</h2><a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="384"><h2>Ad Infinitum</h2><a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="274"><h2>Different.</h2><a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt=""></a></article>
-						<article class="item thumb" data-width="282"><h2>Elysium</h2><a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt=""></a></article>
-					-->
-				</div>
-			</div>
+</body>
 
-			<div id="footer">
-				<div class="left">
-          <img src="https://avatars0.githubusercontent.com/u/20257739?v=3&s=460" style="width:50px;height:50px;border-radius:50%;position:fixed;">
-					<p style="margin-left:70px;">Hello! My name is Ashley Deshields and I'm currently a Computer Science undergrad.<br/>
-           Interests include making short games, art, and programming for fun! Feel free to contact me!</p>
-				</div>
-				<div class="right">
-					<ul class="contact">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Ashley Deshields </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>

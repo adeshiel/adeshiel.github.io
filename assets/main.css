@@ -9,59 +9,8 @@
 }
 
 body {
-    font-family: 'Arvo', serif;
+    font-family: 'Titillium Web', sans-serif;
     color: #fff;
-}
-
-#navbar {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    background: rgba(230,230,230, 0.9);
-    background: -webkit-linear-gradient(rgba(230,230,340,1),rgba(255,255,255,0.9)); /*Safari 5.1-6*/
-    background: -o-linear-gradient(rgba(230,230,230,1),rgba(255,255,255,0.9)); /*Opera 11.1-12*/
-    background: -moz-linear-gradient(rgba(230,230,230,1),rgba(255,255,255,0.9)); /*Fx 3.6-15*/
-    background: linear-gradient(rgba(230,230,230,1),rgba(255,255,255,0.9)); /*Standard*/
-    box-shadow: 0px 5px 5px grey;
-    position: fixed;
-    display: flex;
-    width: 100%;
-    padding-top: 0.3rem;
-}
-
-.navbar-logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 7rem;
-    height: 7rem;
-    padding-left: 0.6rem;
-}
-
-.navbar-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-}
-.navbar-content a {
-    color: #fff;
-    text-shadow: 0px 0px 8px #000;
-    text-decoration: none;
-
-    display: block;
-    padding: 0 2rem; /* Top and bottom padding doesn't matter because align-items: center */
-}
-.navbar-content a:last-child {
-    padding-right: 3rem;
-}
-
-.navbar-divider {
-    border-left: 1px solid #fff;
-    height: 1.5rem;
 }
 
 .temp-background {
@@ -72,7 +21,300 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(269deg, #0c90c1, #282cc1, #a3a5f5);
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.75;
     z-index: -100;
+
+    -webkit-animation: bgAnimate 28s ease infinite;
+    -moz-animation: bgAnimate 28s ease infinite;
+    -o-animation: bgAnimate 28s ease infinite;
+    animation: bgAnimate 28s ease infinite;
+}
+
+h1 {
+  font-size: 3.75rem;
+  text-shadow: 0px 0px 40px #000;
+  text-align: center;
+}
+
+
+@-webkit-keyframes bgAnimate {
+    0%{background-position:0% 45%}
+    50%{background-position:100% 56%}
+    100%{background-position:0% 45%}
+}
+@-moz-keyframes bgAnimate {
+    0%{background-position:0% 45%}
+    50%{background-position:100% 56%}
+    100%{background-position:0% 45%}
+}
+@-o-keyframes bgAnimate {
+    0%{background-position:0% 45%}
+    50%{background-position:100% 56%}
+    100%{background-position:0% 45%}
+}
+@keyframes bgAnimate {
+    0%{background-position:0% 45%}
+    50%{background-position:100% 56%}
+    100%{background-position:0% 45%}
+}
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    /*top: -450px;*/
+    overflow-y: auto;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    font-family: 'Open Sans', sans-serif;
+    visibility: hidden;
+    height: 20%;
+    width: 700px;
+    height: 450px;
+    background: rgba(250, 250, 250, 0.5);
+    color: rgb(24,25, 85);
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 0;
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 0px 5px grey;
+    text-shadow: 0px 0px 8px #000;
+    left: 45%;
+    margin-left: 30px;
+}
+
+.selection {
+  position:absolute;
+  top:70px;
+  min-width:500px;
+  width:45%;
+  height:75%;
+  line-height:125%;
+  padding:5px;
+  margin-right:50px;
+  overflow-y:scroll;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.project-text {
+font-family: 'Open Sans', sans-serif;
+font-size: 90%;
+/* height: 20%; */
+width: 45%;
+height: 300px;
+background: rgba(250, 250, 250, 0.5);
+color: rgb(24,25, 85);
+text-align: center;
+border-radius: 6px;
+padding: 20px 0;
+padding-left: 25px;
+padding-right: 25px;
+position: relative;
+/* z-index: 1; */
+box-shadow: 0px 0px 5px grey;
+text-shadow: 0px 0px 8px #000;
+left: 42%;
+margin-left: 100px;
+margin-top: 50px;
+max-width: 80%;
+min-width: 300px;
+margin-right: 3%;
+/*top: 225px;*/
+overflow-y: auto;
+}
+
+.project-text h2 {
+  font-size: 2.05rem;
+}
+
+ul li {
+
+  padding: 10px;
+  text-shadow: 0px 0px 20px #000;
+
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 20px #000;
+}
+h4 {
+  font-size: 1.2rem;
+}
+
+.selection ul li {
+    font-family: 'Open Sans', sans-serif;
+    background: rgba(24,25, 85, 0.9);
+    margin: 5px;
+    border-radius: 25px;
+    max-width: 600px;
+    padding: 5px;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.start-panel {
+  display: flex;
+  position: relative;
+  text-align: center;
+  margin-top: 57px;
+  width: 100%;
+  height: 400px;
+  top: 10px;
+  padding-bottom: 100px;
+  flex-direction: column;
+  border-style: dotted;
+  border-width: 0px 0px 10px 0px;
+  font-size: 3.75rem;
+  text-shadow: 0px 0px 40px #000;
+  text-align: center;
+  }
+
+  .norm-panel {
+    display: flex;
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+    width: 100%;
+    height: 400px;
+    top: 100px;
+    padding-bottom: 15%;
+    flex-direction: column;
+    border-style: dotted;
+    border-width: 0px 0px 10px 0px;
+/*    font-size: 3.75rem;
+    text-shadow: 0px 0px 40px #000;
+    text-align: center;*/
+    }
+  .scrollbar
+  {
+  	margin-left: 30px;
+  	float: left;
+  	height: 300px;
+  	width: 65px;
+  	background: #F5F5F5;
+  	overflow-y: scroll;
+  	margin-bottom: 25px;
+  }
+
+  .force-overflow
+  {
+  	min-height: 450px;
+  }
+
+  .selection::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	   background-color: #F5F5F5;
+	   border-radius: 10px;
+  }
+
+  .selection::-webkit-scrollbar
+  {
+    width: 10px;
+	  background-color: #F5F5F5;
+    border-radius: 10px;
+  }
+
+  .selection::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+  	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+
+  }
+
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background: rgba(230,230,230, 0.9);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding-top: 45px;
+    padding-right: 2px;
+
+}
+
+.menu-open{
+  font-size:30px;
+  padding-top: -20px;
+  top: 10px;
+  margin-left: 20px;
+  cursor:pointer;
+  position:fixed;
+  z-index: 50;
+  /*
+    -ms-transform: rotate(90deg); /* IE 9 */
+/*    -webkit-transform: rotate(90deg); /* Safari */
+/*    transform: rotate(90deg); /* Standard syntax */
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
