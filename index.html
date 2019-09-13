@@ -3,45 +3,195 @@
 <head>
 <title>The Wonderful Website of Ashley Deshields</title>
 <link rel="stylesheet" href="assets/main.css">
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arvo:400|Open+Sans:300,400" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="particles.js-master/particles.js"></script> -->
 
 </head>
 <body>
-  <div class="temp-background">
+  <!-- <div class="temp-background"></div> -->
+
+  <div id="particles-js"></div>
+
+
+<div id="bessay-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="bessay_close" class="close">&times;</span>
+      <h2>B-Essay</h2>
+    </div>
+    <div class="modal-body">
+      <p>Ever needed to meet a word count, but never knew what else to write?<br>
+        Ever too tired to try and make it up on your own? <br>
+        Never heard of the "white-space" trick, like me? <br><br>
+        That's where <i>B-Essay</i> steps in!<br><br>
+        It simply extends the vocabulary in a pre-existing essay to meet the necessary word count in a slightly smart manner.
+        <br><br>
+        <hr>
+        <br>
+        This was the first web-app I've ever made, and was simply inspired by my writing class freshman year.
+        I want to add machine learning capabilities to it later down the line to make it much smarter.
+        <br><br>
+        </p>
+    </div>
+    <div class="modal-footer">
+      <h3><i> Technologies: Python 2.7, Word API by Mashape, HTML, CSS </i></h3>
+    </div>
   </div>
-  <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#about">About Me</a>
-  <a href="#proj">Projects</a>
-  <a href="#">Resume</a>
-  <a href="#">Contact</a>
 </div>
-<div id="main">
-  <div class= "menu-open" onclick="openNav()">&#9776;</div>
 
-  <div class="start-panel">
-    <img src="https://avatars0.githubusercontent.com/u/20257739?v=3&amp;s=460" style="width:300px;height:300px;border-radius:50%;position:static; align-self:center;">
-    <h1> Hey, nice to see you! </h1>
+<div id="hilyrics-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="HL_close" class="close">&times;</span>
+      <h2>B-Essay</h2>
+    </div>
+    <div class="modal-body">
+      <p>Ever needed to meet a word count, but never knew what else to write?<br>
+        Ever too tired to try and make it up on your own? <br>
+        Never heard of the "white-space" trick, like me? <br><br>
+        That's where <i>B-Essay</i> steps in!<br><br>
+        It simply extends the vocabulary in a pre-existing essay to meet the necessary word count in a slightly smart manner.
+        <br><br>
+        <hr>
+        <br>
+        This was the first web-app I've ever made, and was simply inspired by my writing class freshman year.
+        I want to add machine learning capabilities to it later down the line to make it much smarter.
+        <br><br>
+        </p>
+    </div>
+    <div class="modal-footer">
+      <h3><i> Technologies: Python 2.7, Word API by Mashape, HTML, CSS </i></h3>
+    </div>
+  </div>
+</div>
+
+<div id="HappyTweet-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span id="HP_close"class="close">&times;</span>
+      <h2>B-Essay</h2>
+    </div>
+    <div class="modal-body">
+      In this project, I worked primarily the back end.
+      Using Twilio's emotion analysis API, my job was to create the functions necessary to calculate the emotions from each of the tweets.
+      The logo was also my creation, as my team was known as the Jackie Robinson Beanie Babies.
+        </p>
+    </div>
+    <div class="modal-footer">
+      <h3><i> Technologies: Python 2.7, Word API by Mashape, HTML, CSS </i></h3>
+    </div>
+  </div>
+</div>
+
+<div id="main">
+  <div id="navbar">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <ul class="navbar-content">
+      <li> <a href="#home" onclick="showPage('splash')">Home</a> </li>
+      <div class="navbar-divider"></div>
+      <li> <a href="#about" onclick="showPage('about')">About</a> </li>
+      <div class="navbar-divider"></div>
+      <li> <a href="#projects" onclick="showPage('projects')">Projects</a> </li>
+      <div class="navbar-divider"></div>
+      <li> <a href="#">Resume</a> </li>
+      <div class="navbar-divider"></div>
+      <li> <a href="#">Contact</a> </li>
+    </ul>
   </div>
 
-  <div class="norm-panel" id="about">
+  <div class="norm-panel" id="splash" style="position: absolute; margin-bottom:-5%;overflow-y:hidden;">
+
+        <img src="assets/ItsaMe.jpg" style="border-radius:50%; padding:2%;height: 20vw;border-style:double;border-width:thick;border-color: white;"><h2> Ashley Deshields </h2>
+            <h3>
+
+            <ul>
+              <li> Computer Science @ Boston University </li>
+              <li> Class of 2020 </li>
+              <li> <a href="https://github.com/adeshiel" target="_blank"> <img src="assets/Github-Mark/PNG/GitHub-Mark-Light-64px.png"> </a> </li>
+            </ul>
+            </h3>
+
+
+
+    </div>
+
+  <div class="norm-panel" id="about" style="display:none;">
     <h1>I'm Ashley, nice to meet you!</h1><br>
     <div style="text-align:left; padding-left: 10px;">
-    <h3> Hi there! To re-introduce myself, my name is Ashley Deshields, and I'm a Sophmore studying Computer Science at Boston University. Here's a lil' fact sheet about me:<br></h3><br>
-    <ul><h4>
+    <h3> Hi there! To re-introduce myself, my name is Ashley Deshields, and I'm a senior studying Computer Science at Boston University. Here's a lil' fact sheet about me:<br></h3><br>
+
+    <button class="collapsible">Coursework</button>
+    <div class="content">
+    <table>
+      <tr>
+        <td> Intro to Comp. Sci. w/ Python </td>
+        <td> Data Structures w/ Java </td>
+        <td> Combinatoric Structures </td>
+        <td> Intro to Computer Systems </td>
+      </tr>
+      <tr>
+        <td> Linear Algebra w/ MATLAB </td>
+        <td> Probability in Comp. Sci. </td>
+        <td> Intro to Algorithms </td>
+        <td> Mean Stack Development </td>
+      </tr>
+      <tr>
+        <td> Fundamentals of Computer Systems </td>
+        <td> Algorithmic Data Mining </td>
+        <td> Computer Languages </td>
+        <td> Minds & Machines </td>
+      </tr>
+
+    </table>
+    </div>
+
+    <button class="collapsible">Fun Facts</button>
+    <div class="content">
+      <table>
+        <tr>
+          <td style="text-align:left;"> I'm a second degree black belt in Taekwondo and have been practicing since I was in the 2nd grade. </td>
+        </tr>
+        <tr>
+          <td style="text-align:left;"> I enjoy making story driven games in order to combine my passion for programming and digital art (though none have been released YET)! </td>
+        </tr>
+        <tr>
+          <td style="text-align:left;"> In highschool, I did track for three years and participated in the Penn Relays once. </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- <ul><h4>
       <li>~ I'm a second degree black belt in Taekwondo and have been practicing since I was in the 2nd grade.</li>
       <li>~ I enjoy making story driven games in order to combine my passion for programming and digital art (though none have been released YET)!</li>
       <li>~ I made this site from scratch! Woo!</li>
       <li>~ I like to snowbaord, roller skate, and skateboard, but I can't ride a bike. </li>
       <li>~ In highschool, I did track for three years and participated in the Penn Relays once. </li>
 
-    </ul></h4>
+    </ul></h4> -->
   </div>
 
   </div>
 
+  <div class="norm-panel" id="projects" style="display:none;">
+    <h1> My Projects! </h1><br>
+    <div id="project" style="position: relative; height: 100%; width: 100%;overflow-y:hidden;" >
+      <div class="modal-button">
+        <input type="image" id="bessay" src="assets/bessay.png" onclick="callModal('bessay','bessay-modal')" class="project"/> <br> B-Essay
+      </div><div class="modal-button">
+        <input type="image" id="HL" src="assets/logo.png" onclick="callModal('HL','hilyrics-modal')" class="project"/> <br> HiLyrics
+      </div><div class="modal-button">
+        <input type="image" id="HP" src="assets/beaniebaby.png" onclick="callModal('HP','HappyTweet-modal')" class="project"/> <br> HappyTweet
+      </div>
 
-  <div class="norm-panel" id="proj">
+        <!--  -->
+
+    </div>
+  <div>
+
+<!--
+  <div class="norm-panel" id="projects" style="display:none;">
     <h1> My Projects! </h1>
     <div id="projects" style="position:relative;" >
 
@@ -51,24 +201,46 @@
 
     <div class="selection">
       <ul>
-        <li class="popup" onclick="projectRep('p1')"> B-Essay <span class="popuptext" id="p1">
+        <li class="popup" onclick="projectRep('p1')"> <img src="assets/bessay.png"> <p> B-Essay </p> <span class="popuptext" id="p1">
           <h2><u> B-Essay </u></h2><br>
-            Have you've ever needed to meet a word count, but never knew what else to write?<br>
+            Ever needed to meet a word count, but never knew what else to write?<br>
             Ever too tired to try and make it up on your own? <br>
-            Never heard of the "white-space" trick, like me?<br>
-            That's where <i>B-Essay</i> steps in!<br>
-
-            Started in May 2017, <i>B-Essay</i> currently uses Python 2.7 (since Mashape uses 2.7) and Words API to extend your essay for you in many
-            <del> sometimes nonsensensical </del> ways!
+            Never heard of the "white-space" trick, like me? <br><br>
+            That's where <i>B-Essay</i> steps in!<br><br>
+            It simply extends the vocabulary in a pre-existing essay to meet the necessary word count in a slightly smart manner.
+            <br><br>
+            <hr>
+            <br>
+            This was the first web-app I've ever made, and was simply inspired by my writing class freshman year.
+            I want to add machine learning capabilities to it later down the line to make it much smarter.
+            <br><br>
+            <i> Technologies: Python 2.7, Word API by Mashape, HTML, CSS </i>
 
         </span> </li>
 
-        <li class="popup" onclick="projectRep('p2')"> HappyTweet <span class="popuptext" id="p2">
+        <li class="popup" onclick="projectRep('p2')"> <img src="assets/beaniebaby.png"> <p> HappyTweet </p> <span class="popuptext" id="p2">
           <h2><u> HappyTweet: Tweet Emotion Analysis </u></h2><br>
           In this project, I worked primarily the back end.
           Using Twilio's emotion analysis API, my job was to create the functions necessary to calculate the emotions from each of the tweets.
           The logo was also my creation, as my team was known as the Jackie Robinson Beanie Babies.
+        </span></li>
+
+        <li class="popup" onclick="projectRep('p3')"> <img src="assets/bessay.png"> <p> Pokemon Dream-Team </p> <span class="popuptext" id="p3">
+          <h2><u> Pokemon Dream-Team </u></h2><br>
+            Ever needed to meet a word count, but never knew what else to write?<br>
+            Ever too tired to try and make it up on your own? <br>
+            Never heard of the "white-space" trick, like me? <br><br>
+            That's where <i>B-Essay</i> steps in!<br><br>
+            It simply extends the vocabulary in a pre-existing essay to meet the necessary word count in a slightly smart manner.
+            <br><br>
+            <hr>
+            <br>
+            This project taught me that connecting
+            <br><br>
+            <i> Technologies: Python 2.7, Word API by Mashape, HTML, CSS </i>
+
         </span> </li>
+
 
       </ul>
     </div>
@@ -76,25 +248,55 @@
     </div>
   </div>
 
-</div>
+</div> -->
 
-<!--
+  <div class="norm-panel" id="resume" style="display:none;">
 
-  <div id="navbar">
-      <a href="https://github.com/adeshiel"><img src="https://avatars0.githubusercontent.com/u/20257739?v=3&amp;s=460" style="width:50px;height:50px;border-radius:50%;" alt="Check out my Github Profile" style="display: flex;
-      flex-direction: row; justify-content: flex-start; align-items: center;width: 7rem;height: 7rem;padding-left: 0.6rem;"></a>
-
-      <ul class="navbar-content">
-          <li onlick="pageRep('about')"> About Me </li>
-          <div class="navbar-divider"></div>
-          <li onlick="pageRep('projects')"> Projects </li>
-          <div class="navbar-divider"></div>
-          <li onlick="pageRep('contact')"> Contact </li>
-      </ul>
-  </div> <!-- navbar end -->
+  </div>
 
 
+  <script src="particles.js-master/particles.js"></script>
+  <script src="particles.js-master/demo/js/app.js"></script>
   <script>
+
+  // MODAL START --------------------------------
+ function callModal(button_id, modal_id) {
+  var modal = document.getElementById(modal_id);
+
+  // Get the button that opens the modal
+  var btn = document.getElementById(button_id);
+
+  var closer = button_id+"_close"
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementById(closer);
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+}
+
+  function imgRep(x) {
+    var modal_string = new String(x);
+    var replacement =  document.getElementById("myModal");
+    replacement.innerHTML = document.getElementById(modal_string).innerHTML;
+  }
+  // MODAL END ---------------------------------------
+
+
   // When the user clicks on div, open the popup
   function projectRep(x) {
       var pop_string = new String(x);
@@ -119,6 +321,45 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
+    }
+
+    var current = 0
+    var prev = 0
+
+    var slides = document.getElementsByClassName("norm-panel");
+    function showPage(next) {
+      // about = 1, projects = 2, contact = 3
+      change = new String(next)
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+
+      if(change == "projects") {slides[2].style.display = "block"; prev = current; current = 2;
+      }
+      else if (change == "about") { slides[1].style.display = "block"; prev = current; current = 1;
+      }
+      else {slides[0].style.display = "block"; prev = current; current = 0;}
+
+
+      }
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+          content.style.paddingTop = "0px"
+          content.style.paddingBottom = "0px"
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.paddingTop = "15px"
+          content.style.paddingBottom = "10px"
+        }
+      });
     }
   </script>
 

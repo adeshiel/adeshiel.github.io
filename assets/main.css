@@ -1,3 +1,7 @@
+html {
+  height:100%;
+  overflow-y: hidden;
+}
 * { /* Fresh css palette to overwrite any unexpected browser defaults */
     margin: 0;
     padding: 0;
@@ -11,6 +15,18 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     color: #fff;
+    height:inherit;
+}
+
+hr {
+  border-top: 1px solid white
+}
+.icon {
+  fill: rgba(230,230,230, 0.5);
+  fill: -webkit-linear-gradient(rgba(230,230,340,0.4),rgba(255,255,255,0.6)); /*Safari 5.1-6*/
+  fill: -o-linear-gradient(rgba(230,230,230,0.4),rgba(255,255,255,0.6)); /*Opera 11.1-12*/
+  fill: -moz-linear-gradient(rgba(230,230,230,0.4),rgba(255,255,255,0.6)); /*Fx 3.6-15*/
+  fill: linear-gradient(rgba(230,230,230,0.4),rgba(255,255,255,0.6)); /*Standard*/
 }
 
 .temp-background {
@@ -21,9 +37,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(269deg, #0c90c1, #282cc1, #a3a5f5);
+    /* background: linear-gradient(269deg, #0c90c1, #282cc1, #a3a5f5); */
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 35%, rgba(9,9,121,1) 65%, rgba(211,0,255,1) 100%);
     background-size: cover;
-    opacity: 0.75;
+    /* opacity: 0.75; */
     z-index: -100;
 
     -webkit-animation: bgAnimate 28s ease infinite;
@@ -35,7 +53,13 @@ body {
 h1 {
   font-size: 3.75rem;
   text-shadow: 0px 0px 40px #000;
-  text-align: center;
+
+}
+
+h2 {
+  font-size: 3.25rem;
+  text-shadow: 0px 0px 40px #000;
+
 }
 
 
@@ -59,16 +83,132 @@ h1 {
     50%{background-position:100% 56%}
     100%{background-position:0% 45%}
 }
+
+/* ------------------------- MODAL Projects START ---------------*/
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: rgba(238, 238, 238, 0.1);
+  color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+/* Modal Body */
+.modal-body {padding:2%;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 8px 5px 5px 16px;
+  background-color: rgba(238, 238, 238, 0.4);
+  color: white;
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  z-index: 4;
+  top: 25%;
+  background-color: rgba(65, 12, 102, 0.65);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),0 6px 20px 0 rgba(0,0,0,0.49);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 25%; opacity: 1}
+}
+
+/* ---------------------- MODAL END -------------------- */
+
+input.project {
+  background: rgba(238, 238, 238, 0.1);
+  border: 2px solid white;
+  background-size: 100vw 100vh;
+  height: 15vh;
+  max-height: 15rem;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.modal-button {
+  width: min-content;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin: 0.5%;
+
+}
+
 /* Popup container - can be anything you want */
 .popup {
     position: relative;
     /*top: -450px;*/
-    overflow-y: auto;
+    height: 100px;
+    text-align: left;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    overflow-y: hidden;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.popup p {
+  /* bottom: -10%; */
+  margin-top: -14%;
+  margin-left: 40%;
+  font-size: 2vw;
+}
+
+.popup img {
+  text-align: left;
+  margin-top: -1%;
+  border-radius: 10%;
+  height: 110px;
+  transition: 0.3s;
+
+}
+
+.popup:hover {
+  opacity: 0.7;
 }
 
 /* The actual popup */
@@ -87,16 +227,19 @@ h1 {
     z-index: 1;
     box-shadow: 0px 0px 5px grey;
     text-shadow: 0px 0px 8px #000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
     left: 45%;
     margin-left: 30px;
+
 }
 
 .selection {
   position:absolute;
-  top:70px;
+  top:4px;
   min-width:500px;
   width:45%;
-  height:75%;
+  height:100%;
   line-height:125%;
   padding:5px;
   margin-right:50px;
@@ -122,30 +265,28 @@ h1 {
 }
 
 .project-text {
-font-family: 'Open Sans', sans-serif;
-font-size: 90%;
-/* height: 20%; */
-width: 45%;
-height: 300px;
-background: rgba(250, 250, 250, 0.5);
-color: rgb(24,25, 85);
-text-align: center;
-border-radius: 6px;
-padding: 20px 0;
-padding-left: 25px;
-padding-right: 25px;
-position: relative;
-/* z-index: 1; */
-box-shadow: 0px 0px 5px grey;
-text-shadow: 0px 0px 8px #000;
-left: 42%;
-margin-left: 100px;
-margin-top: 50px;
-max-width: 80%;
-min-width: 300px;
-margin-right: 3%;
-/*top: 225px;*/
-overflow-y: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 90%;
+  width: 45%;
+  height: 26vw;
+  background: rgba(250, 250, 250, 0.2);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 0;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+  box-shadow: 0px 0px 5px grey;
+  text-shadow: 0px 0px 8px #000;
+  left: 42%;
+  margin-left: 100px;
+  margin-top: 50px;
+  max-width: 80%;
+  min-width: 300px;
+  margin-right: 3%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .project-text h2 {
@@ -153,9 +294,22 @@ overflow-y: auto;
 }
 
 ul li {
-
-  padding: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-shadow: 0px 0px 20px #000;
+  list-style: none;
+
+}
+.content table {
+  border-left: 3px solid grey;
+  width: 100%;
+}
+.content th, td {
+  padding: 15px;
+  font-weight: 200;
+  text-align: center;
 
 }
 
@@ -169,7 +323,8 @@ h4 {
 
 .selection ul li {
     font-family: 'Open Sans', sans-serif;
-    background: rgba(24,25, 85, 0.9);
+    background-color: rgba(238, 238, 238, 0.1);
+    border: 2px solid white;
     margin: 5px;
     border-radius: 25px;
     max-width: 600px;
@@ -177,40 +332,110 @@ h4 {
     padding-left: 20px;
     list-style: none;
 }
+.panel-back {
+  position: fixed;
+  /* border-style: dotted; */
+  /* border-width: 10px 10px 10px 10px; */
+  min-height: 75%;
+  height: 75%;
+  max-height: 75%;
+  width: 75%;
+  max-width: 75%;
+  top: 2%;
+  right: 5%;
+  left: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 0;
+}
 
-.start-panel {
-  display: flex;
+.norm-panel {
+  display: block;
   position: relative;
   text-align: center;
-  margin-top: 57px;
-  width: 100%;
-  height: 400px;
-  top: 10px;
-  padding-bottom: 100px;
+  min-height: 75%;
+  height: 75%;
+  max-height: 75%;
+  width: 75%;
+  max-width: 75%;
+  top: 2%;
+  right: 5%;
+  left: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   flex-direction: column;
-  border-style: dotted;
-  border-width: 0px 0px 10px 0px;
-  font-size: 3.75rem;
-  text-shadow: 0px 0px 40px #000;
-  text-align: center;
-  }
+  /* border-style: dotted;
+  border-width: 10px 10px 10px 10px; */
+  overflow: hidden;
+  z-index:0;
 
-  .norm-panel {
-    display: flex;
-    position: relative;
-    text-align: center;
-    padding-top: 30px;
-    width: 100%;
-    height: 400px;
-    top: 100px;
-    padding-bottom: 15%;
-    flex-direction: column;
-    border-style: dotted;
-    border-width: 0px 0px 10px 0px;
-/*    font-size: 3.75rem;
-    text-shadow: 0px 0px 40px #000;
-    text-align: center;*/
-    }
+-webkit-animation: fadeinLeft 2s;
+     -moz-animation: fadeinLeft 2s;
+      -ms-animation: fadeInLeft 2s;
+       -o-animation: fadeInLeft 2s;
+          animation: fadeInLeft 2s;
+}
+
+
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+ }
+ 100% {
+    opacity: 1;
+    transform: translateX(0);
+ }
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+ }
+ 100% {
+    opacity: 1;
+    transform: translateX(0);
+ }
+}
+
+@-ms-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+ }
+ 100% {
+    opacity: 1;
+    transform: translateX(0);
+ }
+}
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+ }
+ 100% {
+    opacity: 1;
+    transform: translateX(0);
+ }
+}
   .scrollbar
   {
   	margin-left: 30px;
@@ -227,21 +452,20 @@ h4 {
   	min-height: 450px;
   }
 
-  .selection::-webkit-scrollbar-track
+  ::-webkit-scrollbar-track
   {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	   background-color: #F5F5F5;
 	   border-radius: 10px;
   }
-
-  .selection::-webkit-scrollbar
+::-webkit-scrollbar
   {
     width: 10px;
 	  background-color: #F5F5F5;
     border-radius: 10px;
   }
 
-  .selection::-webkit-scrollbar-thumb
+  ::-webkit-scrollbar-thumb
   {
     border-radius: 10px;
   	background-image: -webkit-gradient(linear,
@@ -253,68 +477,137 @@ h4 {
 
   }
 
-  .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background: rgba(230,230,230, 0.9);
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding-top: 45px;
-    padding-right: 2px;
-
-}
-
-.menu-open{
-  font-size:30px;
-  padding-top: -20px;
-  top: 10px;
-  margin-left: 20px;
-  cursor:pointer;
-  position:fixed;
-  z-index: 50;
-  /*
-    -ms-transform: rotate(90deg); /* IE 9 */
-/*    -webkit-transform: rotate(90deg); /* Safari */
-/*    transform: rotate(90deg); /* Standard syntax */
-
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+#navbar {
+    display: block;
+    position: fixed;
+    flex-direction: row;
+
+    left: 6%;
+    right: 10%;
+    border-radius: 25%;
+
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+
+  }
+
+  .navbar-content {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  .navbar-content a {
+    color: #fff;
+    text-shadow: 0px 0px 8px #000;
+    text-decoration: none;
+    display: block;
+    padding: 0 1rem; /* Top and bottom padding doesn't matter because align-items: center */
+}
+
+.navbar-content a:last-child {
+    padding-right: 3rem;
+}
+
+.navbar-content a:first-child{
+  padding-left: 3rem;
+}
+.navbar-content ul {
+  display: inline;
+  flex-flow: row;
+}
+
+.navbar-content li {
+  list-style-type: none;
+}
+
+.navbar-divider {
+    border-left: 1px solid #fff;
+    height: 1.5rem;
+}
+
+
+.collapsible {
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgba(238, 238, 238, 0.1);
+  border: 2px solid;
+  border-radius: 15px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover, input.project:hover {
+  background-color: #ccc;
+  color: DimGrey;
+
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  margin-top: -25px;
+  margin-bottom: 20px;
+  padding: 0 18px;
+  border-radius: 5px;
+  max-height: 0;
+  margin-left: 13px;
+  width: 94%;
+  align-self: center;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  color: DimGrey;
+}
+
+.content ul li {
+  list-style: disc;
+}
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+
+}
+
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+#particles-js{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: #b61924;  */
+  /* background-image: url("");  */
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 35%, rgba(9,9,121,1) 65%, rgba(211,0,255,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+ }
+  /* ---- stats.js ---- */
+  .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; }
+  .js-count-particles{ font-size: 1.1em; }
+  #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; }
+  #stats{ border-radius: 3px 3px 0 0; overflow: hidden; }
+  .count-particles{ border-radius: 0 0 3px 3px; }
