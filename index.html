@@ -85,7 +85,7 @@
   </div>
 </div>
 
-<div id="main">
+<div id="main" style="width: 100%; height: 100%;">
   <div id="navbar">
     <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
     <ul class="navbar-content">
@@ -95,7 +95,7 @@
       <div class="navbar-divider"></div>
       <li> <a href="#projects" onclick="showPage('projects')">Projects</a> </li>
       <div class="navbar-divider"></div>
-      <li> <a href="#">Resume</a> </li>
+      <li> <a href="#resume" onclick="showPage('resume')">Resume</a> </li>
       <div class="navbar-divider"></div>
       <li> <a href="#">Contact</a> </li>
     </ul>
@@ -107,9 +107,9 @@
             <h3>
 
             <ul>
-              <li> Computer Science @ Boston University </li>
-              <li> Class of 2020 </li>
-              <li> <a href="https://github.com/adeshiel" target="_blank"> <img src="assets/Github-Mark/PNG/GitHub-Mark-Light-64px.png"> </a> </li>
+              <li> Software Engineer @ 128Technology </li>
+              <li>  CS @ Boston University '20 </li>
+              <li> <a href="https://github.com/adeshiel" target="_blank"> <img src="assets/GitHub-Mark-Light-64px.png" style="height:9.5vh;"></a> <a href="https://www.linkedin.com/in/ashley-deshields-46a89613b/" target="_blank"> <img src="assets/iconfinder_linkedin_circle_gray_107149.png" style="height:10vh;"></a> </li>
             </ul>
             </h3>
 
@@ -120,7 +120,7 @@
   <div class="norm-panel" id="about" style="display:none;">
     <h1>I'm Ashley, nice to meet you!</h1><br>
     <div style="text-align:left; padding-left: 10px;">
-    <h3> Hi there! To re-introduce myself, my name is Ashley Deshields, and I'm a senior studying Computer Science at Boston University. Here's a lil' fact sheet about me:<br></h3><br>
+    <h3> Hi there! To re-introduce myself, my name is Ashley Deshields, and I'm an alumni in Computer Science at Boston University. Here's a lil' fact sheet about me:<br></h3><br>
 
     <button class="collapsible">Coursework</button>
     <div class="content">
@@ -147,29 +147,25 @@
     </table>
     </div>
 
-    <button class="collapsible">Fun Facts</button>
+    <button class="collapsible">Interests</button>
     <div class="content">
       <table>
         <tr>
-          <td style="text-align:left;"> I'm a second degree black belt in Taekwondo and have been practicing since I was in the 2nd grade. </td>
+          <td> 2nd Degree Black Belt in Taekwondo <br>(Practicing since 2nd grade)</td>
+          <td> Game Design and Development  <br>(Bunch of stuff in the works!)</td>
+          <td> Track & Field <br>(Made it to Penn Relays in HS) </td></tr>
         </tr>
         <tr>
-          <td style="text-align:left;"> I enjoy making story driven games in order to combine my passion for programming and digital art (though none have been released YET)! </td>
-        </tr>
+          <td> <a href="https://www.instagram.com/hurricanedragon/?hl=en">Digital Art</a></td>
+          <td> Learning Ukelele </td>
+          <td> Acrylic & Watercolor Painting </td>
         <tr>
-          <td style="text-align:left;"> In highschool, I did track for three years and participated in the Penn Relays once. </td>
-        </tr>
+          <td> Baking Cookies and Bread </td>
+          <td> Photography and Graphic Design </td>
+          <td> Rollerskating, Skateboarding, Snowboarding </td></tr>  </tr>
       </table>
     </div>
 
-    <!-- <ul><h4>
-      <li>~ I'm a second degree black belt in Taekwondo and have been practicing since I was in the 2nd grade.</li>
-      <li>~ I enjoy making story driven games in order to combine my passion for programming and digital art (though none have been released YET)!</li>
-      <li>~ I made this site from scratch! Woo!</li>
-      <li>~ I like to snowbaord, roller skate, and skateboard, but I can't ride a bike. </li>
-      <li>~ In highschool, I did track for three years and participated in the Penn Relays once. </li>
-
-    </ul></h4> -->
   </div>
 
   </div>
@@ -188,7 +184,11 @@
         <!--  -->
 
     </div>
-  <div>
+  </div>
+
+  <div class="norm-panel" id="resume" style="display:none; height: 50%">
+      <iframe id="pdf" src="assets/Deshields-Resume.pdf" width="1000px" height="100%"></iframe>
+</div>
 
 <!--
   <div class="norm-panel" id="projects" style="display:none;">
@@ -250,9 +250,6 @@
 
 </div> -->
 
-  <div class="norm-panel" id="resume" style="display:none;">
-
-  </div>
 
 
   <script src="particles.js-master/particles.js"></script>
@@ -334,7 +331,9 @@
           slides[i].style.display = "none";
       }
 
-      if(change == "projects") {slides[2].style.display = "block"; prev = current; current = 2;
+      if (change == "resume") { slides[3].style.display = "block"; prev = current; current = 3; console.log(slides);
+      }
+      else if(change == "projects") {slides[2].style.display = "block"; prev = current; current = 2;
       }
       else if (change == "about") { slides[1].style.display = "block"; prev = current; current = 1;
       }
